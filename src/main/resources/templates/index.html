@@ -18,7 +18,12 @@
 	
 	<script th:inline="javascript">
 	var rates = [[${rates}]];
-	console.log(rates)
+	var error = [[${error}]];
+	
+	if(error) {
+		alert(error);
+	};
+	
 	$(document).ready(function() {
 	    $('#example').DataTable( {
 	        data: rates,
