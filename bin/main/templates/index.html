@@ -14,7 +14,7 @@
 
 </head>
 <body>		
-	<table id="example" class="display" style="text-align:center" width="100%"></table>
+	<table id="example" class="compact stripe hover"></table>
 	
 	<script th:inline="javascript">
 	var rates = [[${rates}]];
@@ -27,10 +27,13 @@
 	$(document).ready(function() {
 	    $('#example').DataTable( {
 	        data: rates,
-	        "columns": [
-	            { "data": "base", title: "Base" },
-	            { "data": "target" , title: "Target"},
-	            { "data": "timeStamp", title: "Timestamp" },
+	        "columns": [	            
+	        { "data": "target", title: "Country", "render": function(target) {
+	        	let base = target.substr(0,2); 
+	        	return `<img src="https://www.countryflags.io/${base}/flat/32.png">`;
+	        }},
+	        	{ "data": "target", title: "Target"},
+	            { "data": "date", title: "Date" },
 	            { "data": "rate", title: "Rate"},
 	            
 	        ]
