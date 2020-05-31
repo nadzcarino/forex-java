@@ -1,21 +1,11 @@
 package com.forex.model;
 
 public class Rate {
-
-	private String base;
+	
 	private String target;
 	private Double rate;
-	private Long timeStamp;
+	private String date;
 	
-	
-	public String getBase() {
-		return base;
-	}
-
-	public void setBase(String base) {
-		this.base = base;
-	}
-
 
 	public String getTarget() {
 		return target;
@@ -37,20 +27,13 @@ public class Rate {
 	}
 
 
-	public Long getTimeStamp() {
-		return timeStamp;
+	public String getDate() {
+		return date;
 	}
 
 
-	public void setTimeStamp(Long timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setDate(String date) {
+		this.date = date;
 	}
-
-
-	@Override
-	public String toString() {
-		return "Rate [base=" + base + ", target=" + target + ", rate=" + rate + ", timeStamp=" + timeStamp + "]";
-	}
-	
 	
 }
