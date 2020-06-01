@@ -1,4 +1,5 @@
+/application.properties
 /com/
-/templates/
+/data/
 /static/
-/index.html
+/templates/
