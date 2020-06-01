@@ -1,5 +1,6 @@
 package com.forex;
 
+import org.json.simple.parser.JSONParser;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -18,4 +19,7 @@ public class Application extends SpringBootServletInitializer{
 		return builder.build();
 	}
 
+	@Bean public JSONParser parser() {
+		return new JSONParser();
+	}
 }

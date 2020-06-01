@@ -18,9 +18,10 @@ public class ForexController {
 
 	@GetMapping("/")
 	public String index(Model model) {
-		List<Rate> rates = this.forexService.getForexData("PHP");
+		List<Rate> rates = this.forexService.getOnlineData("PHP");
 		String error = null;
 		if(rates.isEmpty()) {			
+			rates = this.forexService.getOfflineData();
 			error = "You are either offline or connection to API is limited. We will display the offline data instead";
 		}
 		
@@ -29,4 +30,10 @@ public class ForexController {
 		
 		return "index";
 	}
+	
+//	@GetMapping("/test")
+//	public String test() {
+//		this.forexService.writeFile();
+//		return "test";
+//	}
 }
