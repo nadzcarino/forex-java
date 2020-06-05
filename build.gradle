@@ -5,8 +5,13 @@ plugins {
 	id 'war'
 }
 
+war {
+    archivesBaseName = 'forex-java'
+}  
+
+
 group = 'com.forex'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '1.8'
 
 repositories {
